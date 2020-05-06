@@ -48,7 +48,8 @@ C.	send files or execute commands over SSH Name: DOCKER_HOST
 	Source files: webapp/target/*.war
 	Remove prefix: webapp/target/
 	Remote directory: /data/docker
-	Exec command: docker stop simple_demo; docker rm -f simple_demo; docker image rm -f simple_demo; cd /data/docker; docker build -t simple_demo
+	Exec command: docker stop simple_demo; docker rm -f simple_demo; docker image rm -f simple_demo; cd /data/docker; 
+	docker build -t simple_demo
 	
 D.	Send files or execute commands over SSJ
         Name; docker_host
