@@ -37,23 +37,23 @@ Simple DevOps Project
 
 7. 	Create Jenkins Job
 
-A.	Source Code Management
-	Repository: https://github.com/radek5/simple.git
-	Branches to build: */master
+        A. Source Code Management
+	   Repository: https://github.com/radek5/simple.git
+	   Branches to build: */master
 	
-B.	Build Root POM: pom.xml
-	Goals and options: Clean install package
+        B. Build Root POM: pom.xml
+	   Goals and options: Clean install package
 	
-C.	send files or execute commands over SSH Name: DOCKER_HOST
-	Source files: webapp/target/*.war
-	Remove prefix: webapp/target/
-	Remote directory: /data/docker
-	Exec command: docker stop simple_demo; docker rm -f simple_demo; docker image rm -f simple_demo; cd /data/docker; 
-	docker build -t simple_demo
+        C. Send files or execute commands over SSH Name: DOCKER_HOST
+	   Source files: webapp/target/*.war
+	   Remove prefix: webapp/target/
+	   Remote directory: /data/docker
+	   Exec command: docker stop simple_demo; docker rm -f simple_demo; docker image rm -f simple_demo; cd /data/docker; 
+	   docker build -t simple_demo
 	
-D.	Send files or execute commands over SSJ
-        Name; docker_host
-	Exec command: docker run -d --name simple_demo -p 8080:8080 simple_demo 
+        D. Send files or execute commands over SSJ
+           Name; docker_host
+	   Exec command: docker run -d --name simple_demo -p 8080:8080 simple_demo 
 	
 8.	Login to docker host, check images and containers (No images and containers)
 
