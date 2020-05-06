@@ -5,10 +5,12 @@ Simple DevOps Project
 1. 	Launch an EC2 instance for Docker host
 
 2.	Install docker on EC2 instance and start services
+
 	yum install -y docker
 	systemctl start docker
 	
 3.	Create new user for Docker management & add to Docker (default) group
+
         useradd dockeradmin -p "password"
 	usermod -aG docker dockeradmin
 	
