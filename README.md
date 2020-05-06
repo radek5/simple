@@ -2,15 +2,15 @@ Simple DevOps Project
 
 1. 	Launch an EC2 instance for Docker host
 
-2.  Install Git
-    yum install -y git
+2.  	Install Git
+    	  yum install -y git
     
 3.	Install docker on EC2 instance and start services
 	  yum install -y docker
 	  systemctl start docker
 	
 4.	Create new user for Docker management & add to Docker (default) group
-    useradd dockeradmin -p "password"
+    	  useradd dockeradmin -p "password"
 	  usermod -aG docker dockeradmin
 	
 5. 	Create Directories
@@ -38,21 +38,22 @@ Simple DevOps Project
 
 8. 	Create Jenkins Job
 
-    A. Source Code Management
+    	A. Source Code Management
 	     Repository: https://github.com/radek5/simple.git
 	     Branches to build: */master
 	
-    B. Build Root POM: pom.xml
+    	B. Build Root POM: pom.xml
 	     Goals and options: Clean install package
 	
-    C. Send files or execute commands over SSH Name: DOCKER_HOST
+    	C. Send files or execute commands over SSH Name: DOCKER_HOST
 	     Source files: webapp/target/*.war
 	     Remove prefix: webapp/target/
 	     Remote directory: /data/docker
-	     Exec command: docker stop simple_demo; docker rm -f simple_demo; docker image rm -f simple_demo; cd /data/docker; docker build -t simple_demo
+	     Exec command: docker stop simple_demo; docker rm -f simple_demo; docker image rm -f simple_demo; cd /data/docker; 
+	     docker build -t simple_demo
 	
-    D. Send files or execute commands over SSJ
-       Name: docker_host
+    	D. Send files or execute commands over SSJ
+       	     Name: docker_host
 	     Exec command: docker run -d --name simple_demo -p 8080:8080 simple_demo 
 	
 9.	Login to docker host, check images and containers (No images and containers)
